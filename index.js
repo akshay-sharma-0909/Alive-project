@@ -112,10 +112,10 @@ app.get("/demo",async(req,res)=>{
 app.use("/listings",listingRouter);
 
 // review
-app.use("/listings",reviewRouter);
+app.use("/listings/:id/reviews",reviewRouter);
 
 //User
- app.use("/listings",userRouter);
+ app.use("/",userRouter);
 
 
 /*
