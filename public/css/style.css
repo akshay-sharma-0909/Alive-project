@@ -1,0 +1,154 @@
+body{
+    display: flex;
+    flex-direction: column;
+    object-position: cover;
+    min-height: 100vh ;
+    font-family: "Plus Jakarta Sana",sans-serif ! important;
+    
+}
+.container{
+    flex:1  ! important;
+    font-size:small ! important ;    
+}
+/* create ejs*/
+input{
+        font-size:small! important ;
+        height:30px !important ;
+
+}
+.form-label{
+    margin-bottom: 0px ! important;
+}
+textarea{
+    font-size:x-small ! important ;
+    
+}
+
+
+/* navbar */
+.fa-compass{
+    color: #fe424d;
+
+}
+
+.navbar{
+    background-color: white;
+
+}
+.nav-link{
+    color:rgb(19, 18, 18) !important;
+}
+
+/*footer */
+
+.fo-link{
+    width:100%;
+}
+.fo-brand{
+    width:100%;
+    color:rgb(132, 131, 131);
+}
+.fo-icon{
+    width:100%;
+    
+}
+.fo-icon i{
+    margin-right:5px;
+}
+.fo-link a{
+    margin-right:5px;
+}
+
+.fo-info{
+    text-align: center;
+    background-color: #ebebeb;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+
+/* card in list*/
+.listing-card{
+    border: none !important;
+    margin-bottom: 20px ! important;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200 !important;
+
+}
+.card-img-top{
+    border-radius:10px! important;
+}
+.card-body{
+    padding: 0  ! important ;
+    margin-top:10px;
+}
+.row a{
+    text-decoration: none !important;
+    color: black;
+}
+
+/* card design*/
+.card-img-overlay{
+    opacity:0 ! important;
+
+}
+.card-img-overlay:hover{
+    opacity:0.2 ! important;
+    background-color: white;
+}
+
+/* new listing*/
+
+.btn {
+    background-color: #fe424d ;
+
+    height:30px;
+    padding-top: 2px;
+}
+
+/* show */
+.btns{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    height:30px;
+}
+
+
+.btn-del{
+    background-color: black !important;
+    color: white;
+    height:30px;
+    padding:  auto 5px;
+    border-radius: 8px;
+    font-size:15px ;
+
+
+}
+/*search-btn*/
+.btn-search{
+    background-color: #fe424d;
+    color:white;
+    border-radius: 25px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.btn-search:hover {
+
+    background-color: #fe424d;
+    color:white;
+
+
+}
+.btn-search i {
+    display:inline;
+    margin-right:0.5rem;
+}
+.search-input{
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+}
+
