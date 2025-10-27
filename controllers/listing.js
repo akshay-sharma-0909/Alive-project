@@ -6,12 +6,12 @@ const Listing = require("../model/list.js");
 // index route
 module.exports.index = async(req,res)=>{
     const allList = await Listing.find()
-    res.render("list.ejs",{allList});
+    res.render("listings/list.ejs",{allList});
 };
 
 // create route
 module.exports.create = (req,res) =>{
-    res.render("create.ejs")
+    res.render("listings/create.ejs")
 };
 
 // post route
@@ -26,7 +26,7 @@ module.exports.post =async(req,res,next)=>{
     await allList.save();
     console.log(allList);
     req.flash("success","New Listing Add");
-    res.redirect("/listing");
+    res.redirect("/listings");
 };
 
 
@@ -34,7 +34,7 @@ module.exports.post =async(req,res,next)=>{
 module.exports.edit = async(req,res)=>{
     let {id}= req.params;
     const allList = await Listing.findById(id);
-    res.render("edit.ejs",{allList});
+    res.render("listings/edit.ejs",{allList});
 };
 
 
@@ -51,7 +51,7 @@ module.exports.update =async(req,res)=>{
    
    req.flash("success"," Listing Edited");
 
-   res.redirect(`/listing/${id}`);
+   res.redirect(`/listings/${id}`);
 };
 
 // delete route
@@ -60,7 +60,7 @@ module.exports.delete = async(req,res)=>{
    let allList = await Listing.findByIdAndDelete(id);
    console.log(allList);
    req.flash("success"," Listing Deleted");
-   res.redirect("/listing");
+   res.redirect("/listings");
 };
 
 // show route
@@ -74,10 +74,10 @@ module.exports.show = async(req,res)=>{
     .populate("owner");
     if(!allList){
         req.flash("error"," Listing not found");
-        return res.redirect("/listing");
+        return res.redirect("/listings");
 
 
     }
     console.log(allList);
-    res.render("show.ejs",{allList});
+    res.render("listings/show.ejs",{allList});
 };

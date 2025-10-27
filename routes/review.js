@@ -10,10 +10,10 @@ const { isAuthor } = require("../middleware.js");
 
 // review
 
-router.post("/listing/:id/reviews",isLoggedIn, ValidationReview,ReviewController.review);
+router.post("/listings/:id/reviews",isLoggedIn, ValidationReview,ReviewController.review);
 
 // delete reviws route
 
-router.delete("/listing/:id/reviews/:reviewId",isLoggedIn,isAuthor,  asyncWrap(ReviewController.delete));
+router.delete("/listings/:id/reviews/:reviewId",isLoggedIn,isAuthor,  asyncWrap(ReviewController.delete));
 
 module.exports = router ;

@@ -18,7 +18,7 @@ module.exports.review = async(req, res) => {
 
     console.log("review saved");
     req.flash("success","New Review Add");
-    res.redirect(`/listing/${allList._id}`);
+    res.redirect(`/listings/${allList._id}`);
 };
 
 // review delete
@@ -31,5 +31,5 @@ module.exports.delete = async(req,res) => {
     req.flash("success","Review Deleted");
 
 
-    res.redirect(`/listing/${id}`);
+    res.redirect(`/listings/${id}`);
 };
