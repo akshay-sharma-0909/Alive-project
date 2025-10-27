@@ -13,28 +13,28 @@ const upload = multer({ storage });
 
 
 //index route
-router.get("/listings", asyncWrap(listingController.index));
+router.get("/", asyncWrap(listingController.index));
 
 //create Route
-router.get("/listings/create",isLoggedIn,listingController.create );
+router.get("/create",isLoggedIn,listingController.create );
 
 
 // post route
-router.post("/listings",isLoggedIn, validationListing, upload.single("listings[image]"),  asyncWrap(listingController.post) );
+router.post("/",isLoggedIn, validationListing, upload.single("listings[image]"),  asyncWrap(listingController.post) );
 
 // edit route
-router.get("/listings/:id/edit", isLoggedIn,isOwner, asyncWrap(listingController.edit));
+router.get("/:id/edit", isLoggedIn,isOwner, asyncWrap(listingController.edit));
 
 //update route
-router.put("/listings/:id" , isLoggedIn, isOwner, validationListing, upload.single("listings[image]"), asyncWrap(listingController.update));
+router.put("/:id" , isLoggedIn, isOwner, validationListing, upload.single("listings[image]"), asyncWrap(listingController.update));
 
 // delete route
 
-router.delete("/listings/:id",isLoggedIn,isOwner, asyncWrap(listingController.delete));
+router.delete("/:id",isLoggedIn,isOwner, asyncWrap(listingController.delete));
 
 // show route
 
-router.get("/listings/:id",  asyncWrap(listingController.show));
+router.get("/:id",  asyncWrap(listingController.show));
 
 
 module.exports = router ;

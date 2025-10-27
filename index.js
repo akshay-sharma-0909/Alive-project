@@ -109,13 +109,13 @@ app.get("/demo",async(req,res)=>{
 
 
 // listing
-app.use("/",listingRouter);
+app.use("/listings",listingRouter);
 
 // review
-app.use("/",reviewRouter);
+app.use("/listings",reviewRouter);
 
 //User
- app.use("/",userRouter);
+ app.use("/listings",userRouter);
 
 
 /*
