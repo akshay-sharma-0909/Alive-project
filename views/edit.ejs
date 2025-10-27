@@ -5,35 +5,35 @@
     <div class="col-8 offset-2">
     <h5>Edit your  List</h5>
 
-    <form method="post" action="/listing/<%= allList._id %>?_method=PUT"  class="needs-validation" novalidate  enctype="multipart/form-data">
+    <form method="post" action="/listings/<%= allList._id %>?_method=PUT"  class="needs-validation" novalidate  enctype="multipart/form-data">
         <div>
             <label for="title " class="form-label">Title</label>
-            <input type="text"  class="form-control"  value="<%= allList.title %>" name="listing[title]" 
+            <input type="text"  class="form-control"  value="<%= allList.title %>" name="listings[title]" 
             required>
         </div>
         <div>
             <label for="description " class="form-label">Description</label>
             <textarea type="text"  class="form-control" row="3"   value="<%allList.description %>" placeholder="Enter Description"
-            name="listing[description] "
+            name="listings[description] "
             ></textarea>
         </div>
         <div>
             <label for="image" class="form-label">Image</label>
-            <input  type="file"   class="form-control"  name="listing[image]">
+            <input  type="file"   class="form-control"  name="listings[image]">
         </div>
         <div>
             <label for="price" class="form-label">Price</label>
-            <input type="number"   class="form-control" value="<%= allList.price%>" name="listing[price]" 
+            <input type="number"   class="form-control" value="<%= allList.price%>" name="listings[price]" 
              required>
         </div>
         <div>
             <label for="country " class="form-label">Country</label>
-            <input type="text"  class="form-control" value="<%= allList.country%>" name="listing[country]"
+            <input type="text"  class="form-control" value="<%= allList.country%>" name="listings[country]"
              required>
         </div>
         <div>
             <label for="location " class="form-label">Location</label>
-            <input type="text" class="form-control" value="<%= allList.location %>" name="listing[location]"
+            <input type="text" class="form-control" value="<%= allList.location %>" name="listings[location]"
              required>
         </div>
         <br>

@@ -14,11 +14,11 @@
             <p class="card-country"> <%=allList.country %></p> 
     <% if(currUser  && currUser._id.equals (allList.owner._id)) { %>  
     <div class="btns ">
-        <form method="get" action="/listing/<%= allList._id %>/edit">
+        <form method="get" action="/listings/<%= allList._id %>/edit">
             <button class="btn btn-dark offset-2">Edit</button>
         </form>
     
-       <form method="post" action="/listing/<%= allList._id %>?_method=DELETE">
+       <form method="post" action="/listings/<%= allList._id %>?_method=DELETE">
             <button class="btn-del  btn-dark offset-4 " >Delete</button>
         </form>
         </div> 
@@ -26,7 +26,7 @@
         <%}%>
     
         <hr/>
-        <form  method="POST" action="/listing/<%= allList._id%>/reviews" class="needs-validation" novalidate >
+        <form  method="POST" action="/listings/<%= allList._id%>/reviews" class="needs-validation" novalidate >
             <% if(currUser){%>
             <h4>Leave a review </h4>
         <!--
@@ -71,7 +71,7 @@
                     <p class="card-text"><%= review.comment %></p>
                       
   
-                    <form method="post" action="/listing/<%=allList._id%>/reviews/<%=review._id %>?_method=DELETE">
+                    <form method="post" action="/listings/<%=allList._id%>/reviews/<%=review._id %>?_method=DELETE">
                         <button class=" btn btn-del btn-sm btn-dark mb-2">Delete</button>
                     </form>
                 </div>

@@ -6,12 +6,12 @@ const Listing = require("../model/list.js");
 // index route
 module.exports.index = async(req,res)=>{
     const allList = await Listing.find()
-    res.render("listings/list.ejs",{allList});
+    res.render("list.ejs",{allList});
 };
 
 // create route
 module.exports.create = (req,res) =>{
-    res.render("listings/create.ejs")
+    res.render("create.ejs")
 };
 
 // post route
@@ -20,7 +20,7 @@ module.exports.post =async(req,res,next)=>{
     let url = req.file.path;
     let filename = req.file.filename;
     console.log(url,"..",filename )
-    let allList = new  Listing(req.body.listing);
+    let allList = new  Listing(req.body.listings);
     allList.owner =  req.user._id;
     allList.image = { url, filename }; 
     await allList.save();
@@ -34,14 +34,14 @@ module.exports.post =async(req,res,next)=>{
 module.exports.edit = async(req,res)=>{
     let {id}= req.params;
     const allList = await Listing.findById(id);
-    res.render("listings/edit.ejs",{allList});
+    res.render("edit.ejs",{allList});
 };
 
 
 //update route
 module.exports.update =async(req,res)=>{
    let  {id} = req.params;
-   let allList = await Listing.findByIdAndUpdate(id,{...req.body.listing});
+   let allList = await Listing.findByIdAndUpdate(id,{...req.body.listings});
    if(typeof req.file !== "undefined"){
         let url = req.file.path;
         let filename = req.file.filename;
@@ -79,5 +79,5 @@ module.exports.show = async(req,res)=>{
 
     }
     console.log(allList);
-    res.render("listings/show.ejs",{allList});
+    res.render("show.ejs",{allList});
 };

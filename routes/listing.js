@@ -20,13 +20,13 @@ router.get("/listings/create",isLoggedIn,listingController.create );
 
 
 // post route
-router.post("/listings",isLoggedIn, validationListing, upload.single("listing[image]"),  asyncWrap(listingController.post) );
+router.post("/listings",isLoggedIn, validationListing, upload.single("listings[image]"),  asyncWrap(listingController.post) );
 
 // edit route
 router.get("/listings/:id/edit", isLoggedIn,isOwner, asyncWrap(listingController.edit));
 
 //update route
-router.put("/listings/:id" , isLoggedIn, isOwner, validationListing, upload.single("listing[image]"), asyncWrap(listingController.update));
+router.put("/listings/:id" , isLoggedIn, isOwner, validationListing, upload.single("listings[image]"), asyncWrap(listingController.update));
 
 // delete route
 
