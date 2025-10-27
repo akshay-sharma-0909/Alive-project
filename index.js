@@ -123,9 +123,7 @@ app.all("*",(err,req,res,next)=>{
     return next(err);
 });
 */
-app.get("/", (req, res) => {
-  res.send("🚀 Alive Project backend is running successfully on Render!");
-});
+
 
 
 app.use((err, req, res, next)=>{
