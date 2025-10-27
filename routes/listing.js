@@ -13,7 +13,7 @@ const upload = multer({ storage });
 
 
 //index route
-router.get("/listing", asyncWrap(listingController.index));
+router.get("/", asyncWrap(listingController.index));
 
 //create Route
 router.get("/listing/create",isLoggedIn,listingController.create );
