@@ -119,11 +119,14 @@ app.use("/",userRouter);
 
 
 
-
+/*
 app.all("*",(err,req,res,next)=>{
     return next(err);
 });
-
+*/
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 
 
