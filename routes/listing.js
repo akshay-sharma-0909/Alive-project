@@ -13,14 +13,14 @@ const upload = multer({ storage });
 
 
 //index route
-router.get("/", asyncWrap(listingController.index));
+router.get("/listing", asyncWrap(listingController.index));
 
 //create Route
 router.get("/create",isLoggedIn,listingController.create );
 
 
 // post route
-router.post("/",isLoggedIn, validationListing, upload.single("listings[image]"),  asyncWrap(listingController.post) );
+router.post("/listing",isLoggedIn, validationListing, upload.single("listings[image]"),  asyncWrap(listingController.post) );
 
 // edit route
 router.get("/:id/edit", isLoggedIn,isOwner, asyncWrap(listingController.edit));
