@@ -115,14 +115,15 @@ app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 
 //User
- app.use("/",userRouter);
+app.use("/",userRouter);
 
 
-/*
+
+
 app.all("*",(err,req,res,next)=>{
     return next(err);
 });
-*/
+
 
 
 
